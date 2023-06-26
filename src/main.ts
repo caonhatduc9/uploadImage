@@ -16,7 +16,7 @@ async function bootstrap() {
   // app.useStaticAssets(path.join(__dirname, '..', 'uploads'));
   // console.log(path.join(__dirname, '..', 'uploads'));
   const corsOptions: CorsOptions = {
-    origin: ['http://localhost:7100', 'http://chuyenhaidua.id.vn'], // add rontend url here
+    origin: ['http://localhost:5500', '127.0.0.1:5500', 'http://chuyenhaidua.id.vn'], // add rontend url here
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Accept',
     credentials: true,
