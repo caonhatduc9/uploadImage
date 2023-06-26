@@ -22,6 +22,9 @@ export class ImgurService {
     // asset.name = listImage[i].filename;
     asset.type = "IMAGE";
     asset.name = image.originalname;
+    console.log("PROTOCAL: ", this.configService.get('PROTOCOL'));
+    console.log("HOST: ", this.configService.get('HOST'));
+    console.log("FOLDER: ", this.configService.get('FOLDER'));
     asset.url = this.configService.get('PROTOCOL') + "://" + this.configService.get('HOST') + "/" + this.configService.get('FOLDER') + "/" + image.filename;
 
     await this.assetRepository.save(asset);
