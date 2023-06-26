@@ -57,4 +57,12 @@ export class ImgurService {
     //   deletehash: deletehash,
     // };
   }
+  async getListImage() {
+    const listImage = await this.assetRepository.find();
+    return {
+      statusCode: 200,
+      message: "Get list image successfully",
+      data: listImage,
+    }
+  }
 }

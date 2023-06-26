@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UploadedFile, UploadedFiles, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Get, Post, UploadedFile, UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { FileFieldsInterceptor, FileInterceptor } from '@nestjs/platform-express';
 import { ImgurService } from './imgur.service';
 import { diskStorage } from 'multer';
@@ -33,5 +33,9 @@ export class ImgurController {
       }
     }
     return await this.imgurService.uploadImage(files);
+  }
+  @Get()
+  async getListImage() {
+    return await this.imgurService.getListImage();
   }
 }
